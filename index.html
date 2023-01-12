@@ -28,14 +28,47 @@
         <div class="container floater">
             <div class="row">
                 <div class="col-4 try-small">
-                    <figure>
-                        <img :src="data.user.avatar" alt="">
-                    </figure>
-                    <p>ciao</p>
-                    <div>
-                        <i class="fa-solid fa-rotate"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    <!-- profilo -->
+                    <div class="side-nav-header d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <figure class="img-fluid pictures mb-0">
+                                <img src="img/avatar_io.jpg" alt="" class="profile-pictures" type="button">
+                            </figure>
+                            <p class="ms-3 mb-0 fw-semibold fs-5" type="button">Nome Utente</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="fa-solid fa-rotate pe-4 fs-4 text-secondary" type="button"></i>
+                            <i class="fa-solid fa-message pe-4 fs-4 text-secondary" type="button"></i>
+                            <i class="fa-solid fa-ellipsis-vertical pe-1 fs-4 text-secondary" type="button"></i>
+                        </div>
+                    </div>
+
+                    <!-- notifiche -->
+                    <div class="side-nav-not d-flex align-items-center">
+                        <i class="fa-solid fa-bell-slash ms-3 fs-3 custom-bell" type="button"></i>
+                        <div class="ms-3">
+                            <p class="m-0 fw-bold">Ricevi notifiche di nuovi messaggi</p>
+                            <p class="m-0 text-decoration-underline text-secondary" type="button">Attiva notifiche desktop</p>
+                        </div>
+                    </div>
+
+                    <!-- ricerca -->
+                    <div class="side-nav-res d-flex align-items-center">
+                        <div class="input-group m-0 rounded-0 custom-measures">
+                            <button class="btn btn-outline-info rounded-0" type="button"><i class="fa-solid fa-magnifying-glass text-black"></i></button>
+                            <input type="text" class="form-control rounded-0" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <!-- chat -->
+                    <div class="gallery">
+                        <figure v-for="(person, i) in data.contacts">
+                            <img :src="person.avatar" alt="person.name">
+                            <figcaption>
+                                <h3>{{ person.name }}</h3>
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
                 <div class="col-8 try-big"></div>
