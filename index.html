@@ -27,18 +27,20 @@
     <div class="black-hole" id="root">
         <div class="container floater">
             <div class="row">
+
+                <!-- sidebar -->
                 <div class="col-4 try-small">
 
                     <!-- profilo -->
                     <div class="side-nav-header d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
-                            <figure class="img-fluid pictures mb-0">
-                                <img src="img/avatar_io.jpg" alt="" class="profile-pictures" type="button">
+                            <figure class="img-fluid pictures mb-0" >
+                                <img :src="'img/avatar' + data.user.avatar + '.jpg'" alt="" class="profile-pictures" type="button">
                             </figure>
-                            <p class="ms-3 mb-0 fw-semibold fs-5" type="button">Nome Utente</p>
+                            <p class="ms-3 mb-0 fw-semibold fs-5" type="button">{{ data.user.name }}</p>
                         </div>
                         <div class="d-flex">
-                            <i class="fa-solid fa-rotate pe-4 fs-4 text-secondary" type="button"></i>
+                            <i class="fa-solid fa-circle-notch pe-4 fs-4 text-secondary" type="button"></i>
                             <i class="fa-solid fa-message pe-4 fs-4 text-secondary" type="button"></i>
                             <i class="fa-solid fa-ellipsis-vertical pe-1 fs-4 text-secondary" type="button"></i>
                         </div>
@@ -49,7 +51,7 @@
                         <i class="fa-solid fa-bell-slash ms-3 fs-3 custom-bell" type="button"></i>
                         <div class="ms-3">
                             <p class="m-0 fw-bold">Ricevi notifiche di nuovi messaggi</p>
-                            <p class="m-0 text-decoration-underline text-secondary" type="button">Attiva notifiche desktop</p>
+                            <p class="m-0 text-decoration-underline text-secondary " type="button">Attiva notifiche desktop</p>
                         </div>
                     </div>
 
@@ -62,15 +64,17 @@
                     </div>
 
                     <!-- chat -->
-                    <div class="gallery">
-                        <figure v-for="(person, i) in data.contacts">
-                            <img :src="person.avatar" alt="person.name">
+                    <div class="side-nav-chat">
+                        <figure v-for="(person, i) in data.contacts" class="img-fluid pictures d-flex align-items-center custom-size-chat">
+                            <img :src="'img/avatar' + person.avatar + '.jpg'" alt="person.name" class="profile-pictures" type="button">
                             <figcaption>
-                                <h3>{{ person.name }}</h3>
+                                <p class="mb-0 ms-3" type="button">{{ person.name }}</p>
                             </figcaption>
                         </figure>
                     </div>
+
                 </div>
+
                 <div class="col-8 try-big"></div>
             </div>
         </div>

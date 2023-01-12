@@ -18,15 +18,15 @@
 .try-small {
     height: 90vh;
     padding: 0;
-    background-color: rgb(180, 19, 19);
-    border: solid 1px #000;
+    /* background-color: rgb(180, 19, 19); */
+    border-right: solid 1px #000;
 }
 
 .try-big {
     padding: 0;
     height: 90vh;
     background-color: rgb(24, 163, 54);
-    border: solid 1px #000;
+    border-left: solid 1px #000;
 }
 
 .floater {
@@ -48,7 +48,7 @@
 }
 
 .pictures {
-    max-width: 20%;
+    max-width: 15%;
 }
 
 .profile-pictures {
@@ -78,10 +78,19 @@
 .side-nav-res {
     height: 8%;
     background-color: #FAFAFA;
-}
+}   
 
 .custom-measures {
     padding-left: 15px;
     width: 95%;
     border-radius: 0px;
 }
+
+/* chat */
+
+.side-nav-chat {
+    height: 68%;
+    background-color: #FFFFFF;
+    padding: 15px 20px 10px 20px;
+    overflow-y: auto;
+}  

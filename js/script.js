@@ -27,7 +27,7 @@ const app = Vue.createApp({
                     avatar: '_4',
                   },
                 ]
-              }
+            }
         }
     },
 });
