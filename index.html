@@ -95,7 +95,7 @@
 
                     <!-- chat -->
                     <div class="chat">
-                        <div class="row" v-for="(sms, i) in data.contacts">
+                        <div class="row" v-for="(sms, i) in data.contacts" v-model="allSms">
                             <div :class="sms.messages[currentIndex].status === 'sent' ? 'offset-7 col-5 my-message mb-3 pt-2' : 'col-5 contact-message mb-3 pt-2'">{{ sms.messages[currentIndex].text }}</div>  
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                     <!-- type footer -->
                     <div class="type-zone d-flex justify-content-evenly align-items-center">
                         <i class="fa-regular fa-face-smile ms-2 fs-3 text-secondary" type="button"></i>
-                        <input type="text" class="form-control footer-measures" placeholder="Scrivi un messaggio" v-model="nowMessage" @kayup.enter="newMessage">
+                        <input type="text" class="form-control footer-measures" placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone me-2 fs-3 text-secondary" type="button"></i>
                     </div>
 
@@ -112,4 +112,4 @@
         </div>
     </div>
 </body>
-</html>
+<!-- </html>v-model="nowMessage" @kayup.enter="newMessage" -->

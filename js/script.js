@@ -5,6 +5,7 @@ const app = Vue.createApp({
         return{
             currentIndex: 0,
             nowMessage: '',
+            allSms: '',
             data: {
                 user: {
                   name: 'Fausto Gervasoni',
@@ -96,21 +97,22 @@ const app = Vue.createApp({
     },
     computed: {
       currentContact(){
-        return this.contacts[currentIndex];
+        this.allSms = currentIndex;
+        return this.contacts[this.currentIndex][messages.text];
       }
     },
     methods: {
       changeChat(index) {
         this.currentIndex = index;
       },
-      newMessage() {
-        if(this.nowMessage){
-          const now = {date: '10/01/2020 15:50:00', text: this.nowMessage, status: 'sent'};
-          this.contacts.message.push(now);
-          this.nowMessage = '';
-          this.$refs.focus();
-        }
-      }
+      // newMessage() {
+      //   if(this.nowMessage){
+      //     const now = {date: '10/01/2020 15:50:00', text: this.nowMessage, status: 'sent'};
+      //     this.contacts.message.push(now);
+      //     this.nowMessage = '';
+      //     this.$refs.focus();
+      //   }
+      // }
     }
 });
 
