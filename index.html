@@ -96,7 +96,7 @@
                     <!-- chat -->
                     <div class="chat">
                         <div class="row" v-for="(sms, i) in data.contacts">
-                            <div :class="sms.messages.status === sent ? 'offset-7 col-5 my-message mb-3 pt-2' : 'col-5 contact-message pt-2'">{{ sms.messages.text }}</div>  
+                            <div :class="sms.messages.status === sent ? 'offset-7 col-5 my-message mb-3 pt-2' : 'col-5 contact-message pt-2'">{{ sms.messages[1].text }}</div>  
                         </div>
                     </div>
 

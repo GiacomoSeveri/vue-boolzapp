@@ -94,6 +94,11 @@ const app = Vue.createApp({
             }
         }
     },
+    computed: {
+      currentContact(){
+        return this.contacts[currentIndex];
+      }
+    },
     methods: {
       changeChat(index) {
         this.currentIndex = index;
