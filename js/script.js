@@ -6,7 +6,7 @@ const app = Vue.createApp({
             currentIndex: 0,
             data: {
                 user: {
-                  name: 'Nome Utente',
+                  name: 'Giacomo Severi',
                   avatar: '_io'
                 },
                 contacts: [
@@ -30,6 +30,11 @@ const app = Vue.createApp({
             }
         }
     },
+    methods: {
+      changeChat(index){
+        this.currentIndex = index;
+      }
+    }
 });
 
 app.mount('#root');

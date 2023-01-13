@@ -65,7 +65,7 @@
 
                     <!-- chat -->
                     <div class="side-nav-chat">
-                        <figure v-for="(person, i) in data.contacts" class="img-fluid pictures d-flex align-items-center custom-size-chat">
+                        <figure v-for="(person, i) in data.contacts" class="img-fluid pictures d-flex align-items-center custom-size-chat" @click="changeChat(i)">
                             <img :src="'img/avatar' + person.avatar + '.jpg'" alt="person.name" class="profile-pictures" type="button">
                             <figcaption>
                                 <p class="mb-0 ms-3" type="button">{{ person.name }}</p>
@@ -81,9 +81,9 @@
                     <div class=" current-chat d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
                             <figure class="img-fluid pictures-chat mb-0" >
-                                <img src="img/avatar_1.jpg" alt="" class="profile-pictures-chat" type="button">
+                                <img :src="'img/avatar' + data.contacts[currentIndex].avatar + '.jpg'" alt="" class="profile-pictures-chat" type="button">
                             </figure>
-                            <p class="ms-3 mb-0 fw-semibold fs-5" type="button">Michele</p>
+                            <p class="ms-3 mb-0 fw-semibold fs-5" type="button">{{ data.contacts[currentIndex].name }}</p>
                             <!-- <p>Ultimo accesso oggi alle</p> -->
                         </div>
                         <div class="d-flex">
