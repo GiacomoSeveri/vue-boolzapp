@@ -95,15 +95,15 @@
 
                     <!-- chat -->
                     <div class="chat">
-                        <div class="row" v-for="(sms, i) in data.contacts[currentIndex].messages">
-                            <div :class="sms.status === 'sent' ? 'offset-6 col-6 my-message mb-3 pt-2' : 'col-6 contact-message mb-3 pt-2'"><p class="mb-1">{{ sms.text }}</p> <span class="date-massage">{{ sms.date }}</span></div>  
+                        <div class="row mess-container" v-for="(sms, i) in data.contacts[currentIndex].messages">
+                            <div :class="sms.status === 'sent' ? 'my-message mb-3 pt-2' : 'contact-message mb-3 pt-2'"><p class="mb-1">{{ sms.text }}</p> <span class="date-massage">{{ sms.date }}</span></div>  
                         </div>
                     </div>
 
                     <!-- type footer -->
                     <div class="type-zone d-flex justify-content-evenly align-items-center">
                         <i class="fa-regular fa-face-smile ms-2 fs-3 text-secondary" type="button"></i>
-                        <input type="text" v-model="newMessage" @keyup.enter="sendMessage()" class="form-control footer-measures" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model.trim="newMessage" @keyup.enter="sendMessage()" class="form-control footer-measures" placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone me-2 fs-3 text-secondary" type="button"></i>
                     </div>
 

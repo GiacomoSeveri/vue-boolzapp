@@ -107,10 +107,12 @@ const app = Vue.createApp({
         this.currentIndex = index;
       },
       sendMessage() {
+        if(!this.newMessage) return;
+
         this.data.contacts[this.currentIndex].messages.push({
-            date: '10/01/2020 15:50:0',
-            text: this.newMessage,
-            status: 'sent'
+          date: '10/01/2020 15:50:0',
+          text: this.newMessage,
+          status: 'sent'
         });
         this.newMessage= '';
         setTimeout(() => {
