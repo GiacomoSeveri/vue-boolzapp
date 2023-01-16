@@ -134,6 +134,13 @@
     border-radius: 10px;
 }
 
+.date-massage {
+    color: rgb(153, 146, 146);
+    display: flex;
+    justify-content: end;
+    font-size: 10px;
+}
+
 /* type zone */
 
 .type-zone {

@@ -4,16 +4,17 @@ const app = Vue.createApp({
     data(){
         return{
             currentIndex: 0,
-            nowMessage: '',
+            serchChat: '',
+            // nowMessage: '',
             allSms: '',
-            data: {
-                user: {
-                  name: 'Fausto Gervasoni',
-                  avatar: '_io'
-                },
+             data: {
+                 user: {
+                   name: 'Fausto Gervasoni',
+                   avatar: '_io'
+                 },
                 contacts: [
                   {
-                    name: 'Brazorf',
+                    name: 'Michele',
                     avatar: '_1',
                     visible: true,
                     messages: [{
@@ -34,7 +35,7 @@ const app = Vue.createApp({
                     ],
                   },
                   {
-                    name: 'Glamour',
+                    name: 'Samuele',
                     avatar: '_2',
                     visible: true,
                     messages: [{
@@ -55,7 +56,7 @@ const app = Vue.createApp({
                     ],
                   },
                   {
-                    name: 'Nullazzo',
+                    name: 'Bruno',
                     avatar: '_3',
                     visible: true,
                     messages: [{
@@ -95,12 +96,13 @@ const app = Vue.createApp({
             }
         }
     },
-    computed: {
-      currentContact(){
-        this.allSms = currentIndex;
-        return this.contacts[this.currentIndex][messages.text];
-      }
-    },
+     computed: {
+      filteredMethods() {
+         return this.data.contacts.filter(contact => {
+             return contact.name.toLowerCase().includes(this.serchChat.toLowerCase());
+         });
+      },
+     },
     methods: {
       changeChat(index) {
         this.currentIndex = index;
