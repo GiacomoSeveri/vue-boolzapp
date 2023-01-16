@@ -125,6 +125,7 @@
 .my-message {
     background-color: #D5F9BA;
     height: 55px;
+    cursor: grab;
     border-radius: 10px;
 }
 
@@ -132,6 +133,7 @@
     background-color: #fff;
     height: 55px;
     border-radius: 10px;
+    cursor: grab;
 }
 
 .date-massage {

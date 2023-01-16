@@ -103,7 +103,7 @@
                     <!-- type footer -->
                     <div class="type-zone d-flex justify-content-evenly align-items-center">
                         <i class="fa-regular fa-face-smile ms-2 fs-3 text-secondary" type="button"></i>
-                        <input type="text" class="form-control footer-measures" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model="newMessage" @keyup.enter="sendMessage()" class="form-control footer-measures" placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone me-2 fs-3 text-secondary" type="button"></i>
                     </div>
 
