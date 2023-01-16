@@ -123,23 +123,16 @@
     /* display: flex; */
 }
 
-.mess-container {
-    display: flex;
-}
-
 .my-message {
     background-color: #D5F9BA;
     height: 55px;
     cursor: grab;
     border-radius: 10px;
-    width: auto;
-    justify-content: flex-end;
 }
 
 .contact-message {
     background-color: #fff;
     height: 55px;
-    width: auto;
     border-radius: 10px;
     cursor: grab;
 }

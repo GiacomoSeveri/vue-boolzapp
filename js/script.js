@@ -2,36 +2,36 @@ console.log('Vue ok', Vue);
 
 const app = Vue.createApp({
     data(){
-        return{
-            currentIndex: 0,
-            serchChat: '',
-            newMessage: '',
-             data: {
-                 user: {
-                   name: 'Fausto Gervasoni',
-                   avatar: '_io'
-                 },
-                contacts: [
+      return{
+          currentIndex: 0,
+          serchChat: '',
+          newMessage: '',
+          data: {
+            user: {
+              name: 'Fausto Gervasoni',
+              avatar: '_io'
+            },
+            contacts: [
+              {
+                name: 'Michele',
+                avatar: '_1',
+                visible: true,
+                messages: [{
+                    date: '10/01/2020 15:30:55',
+                    text: 'Hai portato a spasso il cane?',
+                    status: 'sent'
+                  },
                   {
-                    name: 'Michele',
-                    avatar: '_1',
-                    visible: true,
-                    messages: [{
-                      date: '10/01/2020 15:30:55',
-                      text: 'Hai portato a spasso il cane?',
-                      status: 'sent'
-                    },
-                    {
-                      date: '10/01/2020 15:50:00',
-                      text: 'Ricordati di dargli da mangiare',
-                      status: 'sent'
-                    },
-                    {
-                      date: '10/01/2020 16:15:22',
-                      text: 'Tutto fatto!',
-                      status: 'received'
-                    }
-                    ],
+                    date: '10/01/2020 15:50:00',
+                    text: 'Ricordati di dargli da mangiare',
+                    status: 'sent'
+                  },
+                  {
+                    date: '10/01/2020 16:15:22',
+                    text: 'Tutto fatto!',
+                    status: 'received'
+                  }
+                ],
                   },
                   {
                     name: 'Samuele',
@@ -95,13 +95,16 @@ const app = Vue.createApp({
             }
         }
     },
+
      computed: {
       filteredMethods() {
-         return this.data.contacts.filter(contact => {
-             return contact.name.toLowerCase().includes(this.serchChat.toLowerCase());
-         });
-      },
-     },
+        return this.data.contacts.map(person => {
+          person.visible = this.isVisible(person)
+          return person;
+       });
+      }
+    },
+
     methods: {
       changeChat(index) {
         this.currentIndex = index;
@@ -119,9 +122,12 @@ const app = Vue.createApp({
           this.data.contacts[this.currentIndex].messages.push({ 
             date: '10/01/2020 15:50:0',
             text: 'ok', 
-          status: 'received' });
+          status: 'received'});
         }, 1000);
       },
+      isVisible(person) {
+        return person.name.toLowerCase().includes(this.serchChat.toLowerCase());
+      }
     }
 });
 

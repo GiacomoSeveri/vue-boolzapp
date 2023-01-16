@@ -65,7 +65,7 @@
 
                     <!-- chat -->
                     <div class="side-nav-chat">
-                        <figure v-for="(person, i) in data.contacts" class="img-fluid pictures d-flex align-items-center custom-size-chat" @click="changeChat(i)">
+                        <figure v-for="(person, i) in filteredMethods" v-show="person.visible" class="img-fluid pictures d-flex align-items-center custom-size-chat" @click="changeChat(i)">
                             <img :src="'img/avatar' + person.avatar + '.jpg'" alt="person.name" class="profile-pictures" type="button">
                             <figcaption>
                                 <p class="mb-0 ms-3" type="button">{{ person.name }}</p>
@@ -95,8 +95,8 @@
 
                     <!-- chat -->
                     <div class="chat">
-                        <div class="row mess-container" v-for="(sms, i) in data.contacts[currentIndex].messages">
-                            <div :class="sms.status === 'sent' ? 'my-message mb-3 pt-2' : 'contact-message mb-3 pt-2'"><p class="mb-1">{{ sms.text }}</p> <span class="date-massage">{{ sms.date }}</span></div>  
+                        <div class="row" v-for="(sms, i) in data.contacts[currentIndex].messages">
+                            <div :class="sms.status === 'sent' ? 'offset-6 col-6 my-message mb-3 pt-2' : 'col-6 contact-message mb-3 pt-2'"><p class="mb-1">{{ sms.text }}</p> <span class="date-massage">{{ sms.date }}</span></div>  
                         </div>
                     </div>
 
